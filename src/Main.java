@@ -9,8 +9,9 @@ public class Main {
     static double d;
     static char c;
     static boolean b;
+    private static TrueTable trueTable;
     public static void main(String[] args) {
-        zad4();
+        zad12();
     }
     public static void zad1(){
         Student ja = new Student("Damian","Grzesiak",5,"informatyka");
@@ -60,9 +61,10 @@ public class Main {
         wynik = str1.equals(str2);
         System.out.println(str1+".equals("+ str2+"): "+ wynik);
     }
-    public void zad5(){
+    public static void zad5(){
         int x = 5;
         int y = 10;
+
         System.out.println("x = " +x);
         System.out.println("y = " +y);
         System.out.println("++x = "+ ++x);
@@ -82,18 +84,66 @@ public class Main {
         System.out.println("~~~~~~~~~~~~~~~~~");
         int m =3;
         int n =17;
-        int o =0;
+        int o =10;
+        System.out.println("m = "+m);
+        System.out.println("n = "+n);
+        System.out.println("o = "+o);
+        System.out.println("m < n = " + (m<n));
+        System.out.println("m > o = " + (m>o));
+        System.out.println("n <= o = " + (n<=o));
+        System.out.println("m >= n = " + (m>=n));
+        System.out.println("n == o = " + (n==o));
+        System.out.println("m != o = " + (m!=o));
+        System.out.println("~~~~~~~~~~~~~~~~~");
 
     }
     public void zad6(){}
-    public void zad7(){}
-    public void zad8(){}
-    public void zad9(){}
+    public static void zad7(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Podaj promień walca");
+        int promien = scanner.nextInt();
+        System.out.println("Podaj wysokość walca");
+        int h = scanner.nextInt();
+        System.out.println("pojemość walca wynosi:"+Math.PI*h*(promien*promien));
+    }
+    public static void zad8(){
+        System.out.println("P    |    Q    |  AND  |   OR   |   XOR   |    NOT");
+        System.out.println(TrueTable.ListOfTabel(true,true));
+        System.out.println(TrueTable.ListOfTabel(true,false));
+        System.out.println(TrueTable.ListOfTabel(false,true));
+        System.out.println(TrueTable.ListOfTabel(false,false));
+
+    }
+    public void zad9(){
+
+    }
     public void zad10(){}
-    public void zad11(){}
-    public void zad12(){}
-    public void zad13(){}
-    public void zad14(){}
+    public static void zad11(){
+        Vehicle miniVan = new Vehicle(6,35,8);
+        Vehicle sportsCar = new Vehicle(4,61,19);
+        System.out.println("Zasięg minivan: "+ (miniVan.fuelcap/miniVan.fuelUse)*100+"km");
+        System.out.println("Zasięg sportCar: "+ (sportsCar.fuelcap/sportsCar.fuelUse)*100+"km");
+    }
+    public static void zad12(){
+        Vehicle miniVan = new Vehicle(6,35,8);
+        Vehicle sportsCar = new Vehicle(4,61,19);
+        System.out.println("Przewozi: "+miniVan.getPassenger()+"osób\n"+miniVan.range1());
+        System.out.println("Przewozi: "+sportsCar.getPassenger()+"osób\n"+sportsCar.range1());
+
+    }
+    public void zad13(){
+        Vehicle miniVan = new Vehicle(6,35,8);
+        Vehicle sportsCar = new Vehicle(4,61,19);
+        System.out.println("MiniVan "+miniVan.range2());
+        System.out.println("SportCar "+sportsCar.range1());
+
+    }
+    public void zad14(){
+        Vehicle miniVan = new Vehicle(6,35,8);
+        Vehicle sportsCar = new Vehicle(4,61,19);
+        System.out.println("MiniVan "+miniVan.range2());
+        System.out.println("SportCar "+sportsCar.range1());
+    }
     public void zad15(){}
 
 }
